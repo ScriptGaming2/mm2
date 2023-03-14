@@ -1,0 +1,135 @@
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+
+local Window = Library.CreateLib("Script_Gaming Hub Murder Mystery 2", "BloodTheme")
+
+local Tab = Window:NewTab("Main Scripts")
+
+local Section = Tab:NewSection("OP Scripts")
+
+Section:NewButton("ESP Players", "See Roles", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Ihaveash0rtnamefordiscord/Releases/main/MurderMystery2HighlightESP"))(' Watermelon ?')
+
+    print("Clicked")
+
+end) 
+
+Section:NewButton("Players HitBox", "More Range", function()
+
+_G.HeadSize = 20
+
+_G.Disabled = true
+
+ 
+
+game:GetService('RunService').RenderStepped:connect(function()
+
+if _G.Disabled then
+
+for i,v in next, game:GetService('Players'):GetPlayers() do
+
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+
+pcall(function()
+
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+
+v.Character.HumanoidRootPart.Transparency = 0.7
+
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+
+v.Character.HumanoidRootPart.Material = "Neon"
+
+v.Character.HumanoidRootPart.CanCollide = false
+
+end)
+
+end
+
+end
+
+end
+
+end)
+
+    print("Clicked")
+
+end)
+
+Section:NewButton("Get All Guns", "Get guns for Free", function()
+
+---------------------------------------------------------------------------------------
+
+ 
+
+-- You can edit min and max, if you want more of each set max higher
+
+local WeaponOwnRange = {
+
+min=1,
+
+max=5
+
+}
+
+ 
+
+local DataBase, PlayerData = getrenv()._G.Database, getrenv()._G.PlayerData
+
+ 
+
+local newOwned = {}
+
+ 
+
+for i,v in next, DataBase.Item do
+
+newOwned[i] = math.random(WeaponOwnRange.min, WeaponOwnRange.max) -- newOwned[Weapon]: ItemCount
+
+end
+
+ 
+
+local PlayerWeapons = PlayerData.Weapons
+
+ 
+
+game:GetService("RunService"):BindToRenderStep("InventoryUpdate", 0, function()
+
+PlayerWeapons.Owned = newOwned
+
+end)
+
+ 
+
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+
+ 
+
+--------------------------------------------------------------------------------
+
+    print("Clicked")
+
+end)
+
+Section:NewButton("Fly Gui", "Makes You Fly", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/GDvMG4Ve"))();
+
+    print("Clicked")
+
+end)
+
+Section:NewButton("NoClip Gui", "Noclip", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/UMPZw1M8"))();
+
+    print("Clicked")
+
+end)
+
+local Tab = Window:NewTab("Credits")
+
+local Section = Tab:NewSection("CreditToOwner")
+
+Section:NewLabel("Made By Script_Gaming")
